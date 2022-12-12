@@ -1,0 +1,95 @@
+{% load static %}
+{% block contend %}
+
+
+<!-- Define que el documento esta bajo el estandar de HTML 5 -->
+<!doctype html>
+
+<!-- Representa la raíz de un documento HTML o XHTML. Todos los demás elementos deben ser descendientes de este elemento. -->
+<html lang="es">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title> Formulario de Acceso </title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="author" content="Videojuegos & Desarrollo">
+        <meta name="description" content="Muestra de un formulario de acceso en HTML y CSS">
+        <meta name="keywords" content="Formulario Acceso, Formulario de LogIn">
+
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+
+        <!-- Link hacia el archivo de estilos css -->
+        <link rel="stylesheet" href="{%static 'css/csslogin.css'%}">
+
+        <style type="text/css">
+
+        </style>
+
+        <script type="text/javascript">
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <div id="contenedor">
+            <div id="central">
+                <div id="login">
+                    <div class="titulo">
+                        Bienvenido
+                    </div>
+                    <div class="titulo">
+                        ingrese datos
+                    </div>
+
+
+                        <form id="contactForm" action="" method="POST">
+                    {% csrf_token %}
+
+
+                        <div class="form-group">
+                            <label class="label-control" for="user">Fotos</label>
+                            {{ forms.Fotos }}
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-control" for="user">Titulos</label>
+                            {{ forms.Titulos }}
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-control" for="user">Descripciones</label>
+                            {{ forms.Descripciones }}
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-control" for="user">Tags</label>
+                            {{ forms.Tags }}
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label-control" for="user">URL_GIT</label>
+                            {{ forms.URL_GIT }}
+                        </div>
+
+
+                        <div class="form-group">
+                        <button type="submit" class="form-control-submit-button">Ingresar</button>
+                    </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
+
+{% endblock %}
